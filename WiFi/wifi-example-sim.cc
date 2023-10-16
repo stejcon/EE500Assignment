@@ -141,6 +141,7 @@ int main (int argc, char *argv[]) {
   YansWifiPhyHelper wifiPhy = YansWifiPhyHelper::Default ();
   YansWifiChannelHelper wifiChannel = YansWifiChannelHelper::Default ();
   wifiPhy.SetChannel (wifiChannel.Create ());
+  wifiPhy.Set ("TxGain", DoubleValue(20.0));
   NetDeviceContainer nodeDevices = wifi.Install (wifiPhy, wifiMac, nodes);
 
   InternetStackHelper internet;
